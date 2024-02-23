@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*======== Using Css Custom Variables =========*/
+
+body.dark {
+    --bg-color1: #292a2d;
+    --bg-color2: #161618;
+    --color1: #FFF;
+    --color2: #DDD;
+}
+
+body:not(.dark) {
+    --bg-color1: #fbfdff;
+    --bg-color2: #eaeae9;
+    --color1: #3e4455;
+    --color2: #000;
+}
+
+h1,
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color1);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h6 {
+    color: var(--color1);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    background-color: #fff;
+}
+
+/* Subtitle */
+
+.subtitle::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background-color: var(--color1);
+}
+
+.subtitle {
+    position: relative;
+    color: var(--color1);
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding-left: 55px;
+}
+
+/* ========== Dark And Light Mode Toggle ======== */
+
+.theme-toggle {
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    right: 0;
+    border: none;
+    background-color: var(--color2);
+}
+
+body:not(.dark) .theme-toggle .lni-night,
+body.dark .theme-toggle .lni-sun {
+    cursor: pointer;
+    color: var(--bg-color2);
+    padding: 10px 10px;
+    display: block;
+    font-size: 1.25rem;
+}
+
+body:not(.dark) .theme-toggle .lni-sun {
+    display: none;
+
+}
+
+body.dark .theme-toggle .lni-night {
+    display: none;
+}
+
+/* Navbar Top */
+
+
+
+/* Main Navbar */
+
+
+
+/* Carousel Caption */
+
+
+
+/* Welcome Content */
+
+
+
+/* Show more button */
+
+#welcome-content label {
+    background-color: #293b5f;
+    padding: 15px 0px;
+    color: #FFF;
+    width: 9em;
+    margin: 15px auto;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+}
+
+.welcome-checkbox {
+    order: 2;
+}
+
+.welcome-description {
+    order: 1;
+    text-align: center;
+    max-height: 10em;
+    overflow: hidden;
+    transition: max-height 400ms linear;
+    will-change: max-height;
+}
+
+#welcome-content input[type="checkbox"]:checked~.welcome-description {
+    max-height: 80em;
+}
+
+#welcome-content input[type="checkbox"] {
+    display: none;
+}
+
+#welcome-content label::after {
+    content: "Show More";
+}
+
+#welcome-content input[type="checkbox"]:checked+label::after {
+    content: "Show Less";
+}
+
+/* ========== Destination ============= */
+
+
+
+/* Why  Us */
+
+
+/* Packages */
+
+
+
+/* ----- Swiper arrow and pagination --------- */
+
+.arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.prevArrowBtn,
+.nextArrowBtn {
+    z-index: 1000;
+    border: 2px solid var(--color1);
+    color: var(--color1);
+    background-color: var(--bg-color2);
+    font-size: .80rem;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    width: 2.75rem;
+    height: 2.75rem;
+    line-height: 2.625rem;
+}
+
+.nextArrowBtn {
+    margin-left: 10px;
+}
+
+/* Featured Package */
+
+
+
+/* Testimonial */
+
+
+.testimonial-swiper i {
+    font-size: 4rem;
+    background-image: linear-gradient(to right, #977ec7 0%, #f987d6 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+
+/* Blog */
+
+
+
+/* Contact */
+
+
+
+/* Footer */
+
+
+
+/* ========= Message After Form Submission =======*/
+
+.loader {
+    width: 100%;
+    padding: 10px;
+    background-color: #3d4145;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.loader.show {
+    display: block;
+}
+
+.loader i {
+    animation: rotateme .4s linear infinite;
+    color: var(--color2);
+}
+
+/*============ Loader animation =========*/
+
+@keyframes rotateme {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form-message {
+    display: none;
+    width: 100%;
+    background-color: #3d4145;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-message.show {
+    display: block;
+}
+
+.success-msg {
+    color: green;
+    line-height: 3;
+}
+
+.error-msg {
+    color: red;
+    line-height: 3;
+}
+
+#scroll-top-btn {
+    display: none;
+}
+
+/* Header Sticky */
+
+nav.header-sticky {
+    left: 0px;
+    right: 0px;
+    z-index: 2000;
+    top: 0;
+    position: fixed;
+    background-color: #FFF;
+}
+
+@media (min-width: 992px) {
+
+    h1,
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    /* Theme Toggle */
+
+    .theme-toggle {
+        background: none;
+        position: static;
+        transform: none;
+        background-color: #FFF;
+    }
+
+    body:not(.dark) .theme-toggle .lni-night,
+    body.dark .theme-toggle .lni-sun {
+        color: #000;
+    }
+
+    /* Scroll To Top */
+
+    #scroll-top-btn {
+        position: fixed;
+        right: 50px;
+        bottom: 36px;
+        background-color: #6366f1;
+        color: #FFf;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2000;
+    }
+
+    #scroll-top-btn.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
